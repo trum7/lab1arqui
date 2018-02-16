@@ -65,8 +65,63 @@ http://rubyonrails.org.es/instala.html
 
 ![alt text](./images/image4.png "start.sh")
 
-**8.** 31. Configurar el archivo **/config/database.yml**, poniendo el usuario y contraseña correspondientes, declarados en el archivo docker-compose.yml (en default: username, password; en development: database). Así mismo, agregar el host en default.
+**8.** Configurar el archivo **/config/database.yml**, poniendo el usuario y contraseña correspondientes, declarados en el archivo docker-compose.yml (en default: username, password; en development: database). Así mismo, agregar el host en default.
 
 ![alt text](./images/image5.png "database.yml")
 
 **9.** Ejecutar el archivo **./start.sh** para desplegar el microservicio
+
+**10.** Verificar el Servidor Rancher, allí se podrán visualizar los dos contenedores creados: uno para la base de datos y otro para el microservicio:
+
+![alt text](./images/image6.png "rancherserver")
+
+**11.** Verificar la dirección http://192.168.99.101:3000:
+
+![alt text](./images/image7.png "rails")
+
+
+### Creación del API-REST del Microservicio
+
+**12.** Realizar Ctrl + C en la consola para salir.
+
+**13.** El microservicio creado se encargará de los estudiantes, por lo tanto tendrá un modelo llamado Student, que tendrá los siguientes atributos:
+
+* id: Integer
+* name: String
+* lastname: String
+* email: String
+* code: Integer
+* telephone: Bigint
+
+**14.** Para generar el model, ejecutar el siguiente comando:
+
+>	` rails generate scaffold Student name:string lastname:string email:string code:integer telephone:bigint `
+
+**15.** Se crearán los controladores necesarios para realizar las operaciones CRUD del modelo Student.
+
+**16.** Desplegar nuevamente el microservicio ejecutando ./start.sh.
+
+### Comprobación del API-REST
+
+**17.** Instalar Postman:
+
+https://www.getpostman.com/
+
+**18.** Operación Create Student. En Postman:
+
+http://192.168.99.101:3000/products:
+
+**Body:**  
+
+{  
+	"name":"Camilo",  
+
+  "lastname": "Dajer"  
+
+  "email": "cadajerp@unal.edu.co",  
+
+	"code": 28791234,  
+
+	"telephone": 123456789  
+
+}
