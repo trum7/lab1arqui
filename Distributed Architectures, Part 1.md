@@ -112,16 +112,20 @@ https://www.getpostman.com/
 http://192.168.99.101:3000/products:
 
 **Body:**  
-
-{  
-	"name":"Camilo",  
-
-  "lastname": "Dajer"  
-
+> {  
+	"name": "Camilo",  
+  "lastname": "Dajer",  
   "email": "cadajerp@unal.edu.co",  
-
 	"code": 28791234,  
-
 	"telephone": 123456789  
-
 }
+
+![alt text](./images/image8.png "Post")
+
+**19.** Operación Get All Products. En Postman:   http://192.168.99.101:3000/students:
+
+![alt text](./images/image9.png "Consulta")
+
+**20.** Operación Get Student By Id. En Postman: http://192.168.99.101:3000/students/1 (para id: 1):
+
+![alt text](./images/image10.png "ById")
